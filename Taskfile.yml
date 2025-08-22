@@ -14,4 +14,14 @@ tasks:
     cmds:
       - pnpm i
       - pnpm build
+      - for: ["datastar-aliased.ts", "datastar-core.ts", "datastar.ts"]
+        cmd: |
+          npx esbuild --bundle src/bundles/{{.ITEM}}  \
+          --define:ALIAS=null \
+          --outdir=../bundles/  \
+          --minify --sourcemap \
+          --target=es2023 \
+          --format=esm
 
+  default:
+    deps: [library]
