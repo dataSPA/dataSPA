@@ -1,14 +1,14 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
   "files": {
     "ignoreUnknown": false,
-    "include": ["library/**/*.ts"],
-    "ignore": [
-      "library/**/*.js",
-      "library/**/*.d.ts",
-      "library/src/engine/version.ts",
-      "library/src/engine/consts.ts"
+    "includes": [
+      "**/library/**/*.ts",
+      "!**/library/**/*.js",
+      "!**/library/**/*.d.ts",
+      "!**/library/src/engine/version.ts",
+      "!**/library/src/engine/consts.ts"
     ]
   },
   "formatter": {
@@ -22,7 +22,7 @@
     "attributePosition": "auto",
     "bracketSpacing": true
   },
-  "organizeImports": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {

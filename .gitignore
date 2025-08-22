@@ -2,6 +2,9 @@
 .idea
 .task
 bundles/datastar-pro*
+library/dist/
 library/src/bundles/datastar-pro*
 library/src/plugins/pro
 node_modules
+
+.zed
