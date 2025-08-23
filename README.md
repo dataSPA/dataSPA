@@ -16,11 +16,11 @@ the SPA should they wish.
 
 | Features              | Datastar                       | DataSpa                                                |
 | ----------------------| ------------------------------ | ------------------------------------------------------ |
-| Footguns              | :negative_squared_cross_mark:  | :white_check_mark:                                     |
-| Support               | :white_check_mark:             | :negative_squared_cross_mark:                          |
+| Footguns              | :x:                            | :white_check_mark:                                     |
+| Support               | :white_check_mark:             | :x:                                                    |
 | Inspector             | Pro Only :moneybag:            | [devtools](https://github.com/lllama/dataspa-devtools) |
 | Bundler               | Pro Only :moneybag:            | DIY (just edit the bundle file and rebuild)            |
-| Reproducible Builds   | :negative_squared_cross_mark:  | :white_check_mark:                                     |
+| Reproducible Builds   | :x:                            | :white_check_mark:                                     |
 
 
 | Attribute                    | Datastar              | DataSpa   |
