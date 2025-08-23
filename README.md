@@ -54,8 +54,7 @@ the SPA should they wish.
 | data-query-string            | Pro :moneybag:        | TODO               |
 | data-replace-url             | Pro :moneybag:        | :white_check_mark: |
 | data-scroll-into-view        | Pro :moneybag:        | TODO               |
-| data-view-transition         | Pro :moneybag:        | TODO               |
-| data-view-transition         | Pro :moneybag:        | TODO               |
+| data-view-transition         | Pro :moneybag:        | :white_check_mark: |
 
 | Action                       | Datastar              | DataSpa   |
 |----------------------------- | --------------------- | --------- |
