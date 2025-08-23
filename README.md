@@ -50,7 +50,7 @@ the SPA should they wish.
 | data-custom-validity         | Pro :moneybag:        | TODO               |
 | data-on-raf                  | Pro :moneybag:        | TODO               |
 | data-on-resize               | Pro :moneybag:        | TODO               |
-| data-persist                 | Pro :moneybag:        | TODO               |
+| data-persist                 | Pro :moneybag:        | :white_check_mark: |
 | data-query-string            | Pro :moneybag:        | TODO               |
 | data-replace-url             | Pro :moneybag:        | :white_check_mark: |
 | data-scroll-into-view        | Pro :moneybag:        | :white_check_mark: |
