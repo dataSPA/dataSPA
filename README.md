@@ -23,39 +23,39 @@ the SPA should they wish.
 | Reproducible Builds   | :x:                            | :white_check_mark:                                     |
 
 
-| Attribute                    | Datastar              | DataSpa   |
-|----------------------------- | --------------------- | --------- |
-| data-attr                    | Open-core             | Included  |
-| data-bind                    | Open-core             | Included  |
-| data-class                   | Open-core             | Included  |
-| data-computed                | Open-core             | Included  |
-| data-effect                  | Open-core             | Included  |
-| data-ignore                  | Open-core             | Included  |
-| data-ignore-morph            | Open-core             | Included  |
-| data-indicator               | Open-core             | Included  |
-| data-json-signals            | Open-core             | Included  |
-| data-on                      | Open-core             | Included  |
-| data-on-intersect            | Open-core             | Included  |
-| data-on-interval             | Open-core             | Included  |
-| data-on-load                 | Open-core             | Included  |
-| data-on-signal-patch         | Open-core             | Included  |
-| data-on-signal-patch-filter  | Open-core             | Included  |
-| data-preserve-attr           | Open-core             | Included  |
-| data-ref                     | Open-core             | Included  |
-| data-show                    | Open-core             | Included  |
-| data-signals                 | Open-core             | Included  |
-| data-style                   | Open-core             | Included  |
-| data-text                    | Open-core             | Included  |
-| data-animate                 | Pro :moneybag:        | TODO      |
-| data-custom-validity         | Pro :moneybag:        | TODO      |
-| data-on-raf                  | Pro :moneybag:        | TODO      |
-| data-on-resize               | Pro :moneybag:        | TODO      |
-| data-persist                 | Pro :moneybag:        | TODO      |
-| data-query-string            | Pro :moneybag:        | TODO      |
-| data-replace-url             | Pro :moneybag:        | TODO      |
-| data-scroll-into-view        | Pro :moneybag:        | TODO      |
-| data-view-transition         | Pro :moneybag:        | TODO      |
-| data-view-transition         | Pro :moneybag:        | TODO      |
+| Attribute                    | Datastar              | DataSpa            |
+|----------------------------- | --------------------- | ------------------ |
+| data-attr                    | Open-core             | Included           |
+| data-bind                    | Open-core             | Included           |
+| data-class                   | Open-core             | Included           |
+| data-computed                | Open-core             | Included           |
+| data-effect                  | Open-core             | Included           |
+| data-ignore                  | Open-core             | Included           |
+| data-ignore-morph            | Open-core             | Included           |
+| data-indicator               | Open-core             | Included           |
+| data-json-signals            | Open-core             | Included           |
+| data-on                      | Open-core             | Included           |
+| data-on-intersect            | Open-core             | Included           |
+| data-on-interval             | Open-core             | Included           |
+| data-on-load                 | Open-core             | Included           |
+| data-on-signal-patch         | Open-core             | Included           |
+| data-on-signal-patch-filter  | Open-core             | Included           |
+| data-preserve-attr           | Open-core             | Included           |
+| data-ref                     | Open-core             | Included           |
+| data-show                    | Open-core             | Included           |
+| data-signals                 | Open-core             | Included           |
+| data-style                   | Open-core             | Included           |
+| data-text                    | Open-core             | Included           |
+| data-animate                 | Pro :moneybag:        | TODO               |
+| data-custom-validity         | Pro :moneybag:        | TODO               |
+| data-on-raf                  | Pro :moneybag:        | TODO               |
+| data-on-resize               | Pro :moneybag:        | TODO               |
+| data-persist                 | Pro :moneybag:        | TODO               |
+| data-query-string            | Pro :moneybag:        | TODO               |
+| data-replace-url             | Pro :moneybag:        | :white_check_mark: |
+| data-scroll-into-view        | Pro :moneybag:        | TODO               |
+| data-view-transition         | Pro :moneybag:        | TODO               |
+| data-view-transition         | Pro :moneybag:        | TODO               |
 
 | Action                       | Datastar              | DataSpa   |
 |----------------------------- | --------------------- | --------- |
