@@ -23,7 +23,7 @@ the SPA should they wish.
 | Reproducible Builds   | :x:                            | :white_check_mark:                                     |
 
 
-| Attribute                    | Datastar              | DataSpa            |
+| Attribute                    | Datastar              | dataSPA            |
 |----------------------------- | --------------------- | ------------------ |
 | data-attr                    | Open-core             | Included           |
 | data-bind                    | Open-core             | Included           |
@@ -50,7 +50,7 @@ the SPA should they wish.
 | data-custom-validity         | Pro :moneybag:        | TODO               |
 | data-on-raf                  | Pro :moneybag:        | TODO               |
 | data-on-resize               | Pro :moneybag:        | TODO               |
-| data-persist                 | Pro :moneybag:        | TODO               |
+| data-persist                 | Pro :moneybag:        | :white_check_mark: |
 | data-query-string            | Pro :moneybag:        | TODO               |
 | data-replace-url             | Pro :moneybag:        | TODO               |
 | data-scroll-into-view        | Pro :moneybag:        | TODO               |
