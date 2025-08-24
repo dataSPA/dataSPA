@@ -33,4 +33,3 @@ tasks:
 
   default:
     deps: [library]
-
