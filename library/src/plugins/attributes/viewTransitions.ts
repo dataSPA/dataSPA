@@ -8,6 +8,7 @@ export const ViewTransition: AttributePlugin = {
   name: "viewTransition",
   keyReq: "denied",
   valReq: "must",
+  returnsValue: true,
   // onGlobalInit() {
   //   let hasViewTransitionMeta = false;
   //   for (const node of document.head.childNodes) {
