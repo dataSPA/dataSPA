@@ -1,29 +1,29 @@
-![DataSpa](./DataSpa.png)
+![dataSPA](./dataSPA.png)
 
-# DataSpa
+# dataSPA
 
 ## A hypermedia framework.
 
-DataSpa is a friendly fork of the [Datastar](https://data-star.dev/) framework for
+dataSPA is a friendly fork of the [Datastar](https://data-star.dev/) framework for
 building everything from simple sites to real-time collaborative web
-applications. The aim of DataSpa is to restore the plugins from the
+applications. The aim of dataSPA is to restore the plugins from the
 Datastar beta that are now only available in [Datastar Pro](https://data-star.dev/reference/datastar_pro).
 
 A number of plugins were removed from Datastar as they were a source of support
 requests, were considered footguns, or were in danger of making apps too
-SPA-like. DataSpa aims to restore these plugins and let people enjoy a trip to
+SPA-like. dataSPA aims to restore these plugins and let people enjoy a trip to
 the SPA should they wish.
 
-| Features              | Datastar                       | DataSpa                                                |
+| Features              | Datastar                       | dataSPA                                                |
 | ----------------------| ------------------------------ | ------------------------------------------------------ |
 | Footguns              | :x:                            | :white_check_mark:                                     |
 | Support               | :white_check_mark:             | :x:                                                    |
-| Inspector             | Pro Only :moneybag:            | [devtools](https://github.com/lllama/dataspa-devtools) |
+| Inspector             | Pro Only :moneybag:            | [devtools](https://github.com/dataSPA/dataSPA-devtools) |
 | Bundler               | Pro Only :moneybag:            | DIY (just edit the bundle file and rebuild)            |
 | Reproducible Builds   | :x:                            | :white_check_mark:                                     |
 
 
-| Attribute                    | Datastar              | DataSpa            |
+| Attribute                    | Datastar              | dataSPA            |
 |----------------------------- | --------------------- | ------------------ |
 | data-attr                    | Open-core             | Included           |
 | data-bind                    | Open-core             | Included           |
@@ -56,7 +56,7 @@ the SPA should they wish.
 | data-scroll-into-view        | Pro :moneybag:        | :white_check_mark: |
 | data-view-transition         | Pro :moneybag:        | :white_check_mark: |
 
-| Action                       | Datastar              | DataSpa   |
+| Action                       | Datastar              | dataSPA   |
 |----------------------------- | --------------------- | --------- |
 | @peek()                      | Open-core             | Included  |
 | @setAll()                    | Open-core             | Included  |
@@ -69,11 +69,11 @@ the SPA should they wish.
 | @clipboard                   | Pro :moneybag:        | TODO      |
 | @fit                         | Pro :moneybag:        | TODO      |
 
-| Events                       | Datastar              | DataSpa   |
+| Events                       | Datastar              | dataSPA   |
 | ---------------------------- | --------------------- | --------- |
 | upload-progress              | Pro :moneybag:        | TODO      |
 
-In addition to the above, DataSpa also has a [browser extension](https://github.com/lllama/dataspa-devtools)
+In addition to the above, dataSPA also has a [browser extension](https://github.com/dataSPA/dataSPA-devtools)
 that can be used to inspect signals and SSE events.
 
 

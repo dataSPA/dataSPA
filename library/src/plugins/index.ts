@@ -25,7 +25,7 @@ import { POST } from "../plugins/backend/actions/post";
 import { PUT } from "../plugins/backend/actions/put";
 import { PatchElements } from "../plugins/backend/watchers/patchElements";
 import { PatchSignals } from "../plugins/backend/watchers/patchSignals";
-// DataSpa additions
+// dataSPA additions
 import { Persist } from "../plugins/attributes/persist";
 import { ReplaceUrl } from "../plugins/attributes/replaceUrl";
 import { ScrollIntoView } from "../plugins/attributes/scrollIntoView";
@@ -62,7 +62,7 @@ export {
   Peek,
   SetAll,
   ToggleAll,
-  //DataSpa
+  //dataSPA
   Persist,
   ReplaceUrl,
   ScrollIntoView,

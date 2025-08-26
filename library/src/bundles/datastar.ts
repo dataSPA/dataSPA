@@ -26,7 +26,7 @@ import { POST } from "../plugins/backend/actions/post";
 import { PUT } from "../plugins/backend/actions/put";
 import { PatchElements } from "../plugins/backend/watchers/patchElements";
 import { PatchSignals } from "../plugins/backend/watchers/patchSignals";
-// DataSpa
+// dataSPA
 import { ViewTransition } from "../plugins/attributes/viewTransitions";
 import { ReplaceUrl } from "../plugins/attributes/replaceUrl";
 import { Persist } from "../plugins/attributes/persist";
@@ -63,7 +63,7 @@ load(
   Peek,
   SetAll,
   ToggleAll,
-  // DataSpa
+  // dataSPA
   ViewTransition,
   ReplaceUrl,
   Persist,
