@@ -17,6 +17,7 @@ tasks:
       - for: ["datastar-aliased.ts", "datastar-core.ts", "datastar.ts"]
         cmd: |
           npx esbuild --bundle src/bundles/{{.ITEM}}  \
+          --define:__USE_UPLOAD_PROGRESS__=true \
           --define:ALIAS=null \
           --outdir=../bundles/  \
           --minify --sourcemap \
@@ -25,3 +26,4 @@ tasks:
 
   default:
     deps: [library]
+
