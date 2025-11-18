@@ -1,9 +1,4 @@
-import {
-  DATASTAR_FETCH_EVENT,
-  DATASTAR_READY_EVENT,
-  DSP,
-  DSS,
-} from '@engine/consts'
+import { DATASTAR_FETCH_EVENT, DSP, DSS } from '@engine/consts'
 import { root } from '@engine/signals'
 import type {
   ActionContext,
@@ -40,6 +35,15 @@ const error = (
 const actionPlugins: Map<string, ActionPlugin> = new Map()
 const attributePlugins: Map<string, AttributePlugin> = new Map()
 const watcherPlugins: Map<string, WatcherPlugin> = new Map()
+
+// The active expression evaluator. Must be set by the bundle entry point
+// before any plugins load via setExpressionEvaluator().
+// Original bundles use newFunctionEvaluator; CSP bundles use jsepEvaluator.
+let _evaluator: ExprEvaluator | undefined
+
+export const setExpressionEvaluator = (evaluator: ExprEvaluator): void => {
+  _evaluator = evaluator
+}
 
 export const actions: Record<
   string,
@@ -351,10 +355,16 @@ const applyAttributePlugin = (
 
     const cleanups = new Map<string, () => void>()
     if (valueProvided) {
-      let cachedRx: GenRxFn
+      let cachedRx: ExprFn
       ctx.rx = (...args: any[]) => {
         if (!cachedRx) {
-          cachedRx = genRx(value, {
+          if (!_evaluator) {
+            throw new Error(
+              'No expression evaluator has been set. ' +
+                'Call setExpressionEvaluator() before using Datastar attributes.',
+            )
+          }
+          cachedRx = _evaluator(value, {
             returnsValue: plugin.returnsValue,
             argNames: plugin.argNames,
             cleanups,
@@ -393,7 +403,7 @@ type GenRxOptions = {
 
 type GenRxFn = <T>(el: HTMLOrSVG, ...args: any[]) => T
 
-export const genRx = (
+const genRx = (
   value: string,
   {
     returnsValue = false,
@@ -464,7 +474,7 @@ export const genRx = (
   //   $123            -> $['123']
   //   $foo.0.name     -> $['foo']['0']['name']
 
-  // Skip replacements inside string/template literals.
+  // Skip replacements inside string/template literals. 
   // Template interpolation support rewrites `${...}` only when braces are non-nested.
   expr = expr.replace(
     /("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\$]|\$(?!\{))*`)|\$\{([^{}]*)\}|\$([a-zA-Z_\d]\w*(?:[.-]\w+)*)/g,

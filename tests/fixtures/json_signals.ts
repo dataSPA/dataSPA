@@ -84,3 +84,68 @@ export const jsonSignalsExcludeFilterFixture: TestFixture = {
   `,
   expected: '1',
 }
+
+// ---------------------------------------------------------------------------
+// CSP-safe variants — use #safeParseJSON / #hasKey helpers instead of
+// try/catch and const declarations, which are unsupported by the jsep evaluator.
+// ---------------------------------------------------------------------------
+
+export const jsonSignalsBasicCspFixture: TestFixture = {
+  name: 'json_signals_basic_csp',
+  description: 'data-json-signals outputs a pretty-printed JSON snapshot of all signals',
+  html: `
+    <div data-signals:count="42">
+      <pre id="output" data-json-signals></pre>
+      <code id="result"
+            data-init="setTimeout(() => $result = #safeParseJSON(output.textContent)?.count === 42 ? 1 : 0)"
+            data-text="$result">
+      </code>
+    </div>
+  `,
+  expected: '1',
+}
+
+export const jsonSignalsTerseCspFixture: TestFixture = {
+  name: 'json_signals_terse_csp',
+  description: 'data-json-signals with __terse modifier outputs compact JSON (no indentation)',
+  html: `
+    <div data-signals:val="7">
+      <pre id="output" data-json-signals__terse></pre>
+      <code id="result"
+            data-init="setTimeout(() => $result = #safeParseJSON(output.textContent)?.val === 7 && !output.textContent.includes('\\n') ? 1 : 0)"
+            data-text="$result">
+      </code>
+    </div>
+  `,
+  expected: '1',
+}
+
+export const jsonSignalsIncludeFilterCspFixture: TestFixture = {
+  name: 'json_signals_include_filter_csp',
+  description: 'data-json-signals include filter only outputs matching signals',
+  html: `
+    <div data-signals:foo="1" data-signals:bar="2">
+      <pre id="output" data-json-signals="{ include: /^foo$/ }"></pre>
+      <code id="result"
+            data-init="setTimeout(() => $result = #hasKey(#safeParseJSON(output.textContent), 'foo') && !#hasKey(#safeParseJSON(output.textContent), 'bar') ? 1 : 0)"
+            data-text="$result">
+      </code>
+    </div>
+  `,
+  expected: '1',
+}
+
+export const jsonSignalsExcludeFilterCspFixture: TestFixture = {
+  name: 'json_signals_exclude_filter_csp',
+  description: 'data-json-signals exclude filter omits matching signals from the output',
+  html: `
+    <div data-signals:keep="10" data-signals:drop="20">
+      <pre id="output" data-json-signals="{ exclude: /^drop$/ }"></pre>
+      <code id="result"
+            data-init="setTimeout(() => $result = #hasKey(#safeParseJSON(output.textContent), 'keep') && !#hasKey(#safeParseJSON(output.textContent), 'drop') ? 1 : 0)"
+            data-text="$result">
+      </code>
+    </div>
+  `,
+  expected: '1',
+}
