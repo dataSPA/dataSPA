@@ -10,6 +10,7 @@ import * as fs from 'fs'
 //
 // Examples:
 //   BUNDLE=datastar             (default) → bundles/datastar.js
+//   BUNDLE=datastar-csp         → bundles/datastar-csp.js
 //   BUNDLE=datastar-aliased     → bundles/datastar-aliased.js
 //   BUNDLE=datastar-core        → bundles/datastar-core.js
 //

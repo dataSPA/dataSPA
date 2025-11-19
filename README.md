@@ -14,13 +14,13 @@ requests, were considered footguns, or were in danger of making apps too
 SPA-like. dataSPA aims to restore these plugins and let people enjoy a trip to
 the SPA should they wish.
 
-| Features              | Datastar                       | dataSPA                                                |
-| ----------------------| ------------------------------ | ------------------------------------------------------ |
-| Footguns              | :x:                            | :white_check_mark:                                     |
-| Support               | :white_check_mark:             | :x:                                                    |
-| Inspector             | Pro Only :moneybag:            | [devtools](https://github.com/dataSPA/dataSPA-devtools) |
-| Bundler               | Pro Only :moneybag:            | DIY (just edit the bundle file and rebuild)            |
-| Reproducible Builds   | :x:                            | :white_check_mark:                                     |
+| Features              | Datastar                       | dataSPA                                                   |
+| ----------------------| ------------------------------ | ------------------------------------------------------    |
+| Footguns              | :x:                            | :white_check_mark:                                        |
+| Support               | :white_check_mark:             | :x:                                                       |
+| Inspector             | Pro Only :moneybag:            | [devtools](https://github.com/dataSPA/dataSPA-devtools) <br> [inspector](https://github.com/dataSPA/dataSPA-inspector) |
+| Bundler               | Pro Only :moneybag:            | DIY (just edit the bundle file and rebuild)               |
+| Reproducible Builds   | :x:                            | :white_check_mark:                                        |
 
 
 | Attribute                    | Datastar              | dataSPA            |

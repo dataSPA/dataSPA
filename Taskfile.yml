@@ -11,6 +11,7 @@ tasks:
       - "**/*.json"
     generates:
       - "dist/**/*"
+      - "../bundles/*"
     cmds:
       - pnpm i
       - pnpm build
@@ -30,6 +31,13 @@ tasks:
           --minify --sourcemap \
           --target=es2023 \
           --format=esm
+
+  test:
+    dir: tests
+    desc: Run the test suite against the standard and CSP bundles
+    cmds:
+      - for: ["datastar", "datastar-csp"]
+        cmd: BUNDLE={{.ITEM}} pnpm playwright test
 
   default:
     deps: [library]
