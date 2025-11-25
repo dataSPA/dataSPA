@@ -14,6 +14,8 @@ export {
   stopPeeking,
 } from '@engine/signals'
 
+export { modifyCasing } from '@utils/text'
+
 import '@plugins/actions/peek'
 import '@plugins/actions/setAll'
 import '@plugins/actions/toggleAll'

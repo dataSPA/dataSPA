@@ -13,3 +13,4 @@ export {
   startPeeking,
   stopPeeking,
 } from '@engine/signals'
+export { modifyCasing } from '@utils/text'
