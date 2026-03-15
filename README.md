@@ -66,7 +66,7 @@ the SPA should they wish.
 | @put()                       | Open-core             | Included  |
 | @patch()                     | Open-core             | Included  |
 | @delete()                    | Open-core             | Included  |
-| @clipboard                   | Pro :moneybag:        | TODO      |
+| @clipboard                   | Pro :moneybag:        | Included  |
 | @fit                         | Pro :moneybag:        | TODO      |
 
 | Events                       | Datastar              | dataSPA   |
