@@ -76,6 +76,51 @@ the SPA should they wish.
 In addition to the above, dataSPA also has a [browser extension](https://github.com/dataSPA/dataSPA-devtools)
 that can be used to inspect signals and SSE events.
 
+## CSP-Friendly Helpers
+
+The `datastar-csp` and `datastar-aliased-csp` bundles replace the default `new Function`
+expression evaluator with a jsep-based AST interpreter, making them safe to use under a
+strict Content Security Policy (no `unsafe-eval` required).
+
+Because arbitrary function expressions cannot be written directly in HTML attributes in
+CSP mode, the `registerHelper` API lets you define complex logic in your own JavaScript
+modules and invoke it from expressions using the `#name(...)` syntax.
+
+### Registering a helper
+
+```typescript
+import { registerHelper } from 'datastar-csp'
+
+registerHelper('format', (value: number) => value.toFixed(2))
+```
+
+Call `registerHelper` at application bootstrap, before Datastar initialises. Registering
+the same name twice overwrites the previous entry.
+
+### Using a helper in HTML
+
+```html
+<span data-text="#format($price)"></span>
+```
+
+Arguments are evaluated by the jsep interpreter before being passed to your function, so
+signals, literals, and operators all work as expected:
+
+```html
+<span data-text="#currency($total, '€')"></span>
+<div data-show="#isAdmin($userRole)"></div>
+<input data-bind:value="#clamp($slider, 0, 100)" />
+```
+
+### Helper function rules
+
+| Rule | Detail |
+|---|---|
+| Register before DOM parse | Call `registerHelper` at bootstrap. |
+| Arguments are pre-evaluated | Signals and expressions are resolved before your function receives them. |
+| No restriction on function body | Complex logic, `new`, closures, and async functions are all fine — the code runs in your module, not in HTML. |
+| Non-CSP parity | `registerHelper` is exported from all bundles for API consistency, but only has effect in CSP mode. |
+
 
 <!--Getting started is as easy as adding a single script tag to your HTML.
 

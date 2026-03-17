@@ -23,6 +23,13 @@ function buildHarnessHtml(fixtureHtml: string): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="importmap">{"imports":{"datastar":"${BUNDLE_URL}"}}</script>
+  <script type="module">
+    import { registerHelper } from 'datastar'
+    registerHelper('safeParseJSON', (str) => {
+      try { return JSON.parse(str) } catch { return null }
+    })
+    registerHelper('hasKey', (obj, key) => obj !== null && key in Object(obj))
+  </script>
   <script type="module" src="${BUNDLE_URL}"></script>
 </head>
 <body>
@@ -50,6 +57,8 @@ type TestFixtures = {
   harnessPage: HarnessPage
   /** Whether the current bundle is the aliased variant */
   isAliasedBundle: boolean
+  /** Whether the current bundle is a CSP variant */
+  isCspBundle: boolean
   /** The bundle name (e.g. 'datastar', 'datastar-aliased') */
   bundleName: string
 }
@@ -61,6 +70,10 @@ export const test = base.extend<TestFixtures>({
 
   isAliasedBundle: async ({ bundleName }, use) => {
     await use(bundleName.includes('aliased'))
+  },
+
+  isCspBundle: async ({ bundleName }, use) => {
+    await use(bundleName.includes('csp'))
   },
 
   harnessPage: async ({ page }, use) => {

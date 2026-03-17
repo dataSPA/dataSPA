@@ -6,6 +6,7 @@ library/dist/
 library/src/bundles/datastar-pro*
 library/src/plugins/pro
 node_modules
+arrow-ternary-bug/
 
 .zed
 tests/test-results/

@@ -1,0 +1,19 @@
+{
+  "name": "dataspa-library",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@jsep-plugin/arrow": "^1.0.6",
+    "@jsep-plugin/assignment": "^1.3.0",
+    "@jsep-plugin/object": "^1.2.2",
+    "@jsep-plugin/regex": "^1.0.4",
+    "@jsep-plugin/template": "^1.0.5",
+    "jsep": "^1.4.0"
+  }
+}

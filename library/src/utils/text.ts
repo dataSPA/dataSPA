@@ -27,6 +27,22 @@ type JsStrToObjectOptions = {
   reviveFunctionStrings?: boolean
 }
 
+/**
+ * Optional CSP-safe evaluator for the non-JSON fallback path of
+ * `jsStrToObject`. When set (via `setJsStrToObjectEvaluator`), this function
+ * is used instead of `new Function(...)` to parse JS object syntax that is
+ * not valid JSON (e.g. unquoted keys, signal references, regex literals).
+ *
+ * Set this from the CSP bundle entry point:
+ *   import { evaluateStaticExpression } from '@engine/expression-jsep'
+ *   setJsStrToObjectEvaluator(evaluateStaticExpression)
+ */
+let _jsStrToObjectEvaluator: ((raw: string) => any) | undefined
+
+export const setJsStrToObjectEvaluator = (fn: (raw: string) => any): void => {
+  _jsStrToObjectEvaluator = fn
+}
+
 export const jsStrToObject = (
   raw: string,
   options: JsStrToObjectOptions = {},
@@ -46,8 +62,11 @@ export const jsStrToObject = (
       }
     })
   } catch {
-    // If JSON parsing fails, try to evaluate as a JavaScript object
-    // This is less safe and should be used with caution
+    // If JSON parsing fails, fall back to a JS object evaluator.
+    // In CSP mode this is the jsep-based evaluator registered via
+    // setJsStrToObjectEvaluator(); otherwise use new Function (requires
+    // unsafe-eval).
+    if (_jsStrToObjectEvaluator) return _jsStrToObjectEvaluator(raw)
     return Function(`return (${raw})`)()
   }
 }

@@ -1,8 +1,21 @@
-import { newFunctionEvaluator } from '@engine/expression-new-function'
+// CSP-safe build: install the jsep evaluator before any plugins load
 import { setExpressionEvaluator } from '@engine'
-setExpressionEvaluator(newFunctionEvaluator)
+import {
+  evaluateStaticExpression,
+  jsepEvaluator,
+} from '@engine/expression-jsep'
+import { setJsStrToObjectEvaluator } from '@utils/text'
 
-export { action, actions, attribute, watcher, setExpressionEvaluator } from '@engine'
+setExpressionEvaluator(jsepEvaluator)
+setJsStrToObjectEvaluator(evaluateStaticExpression)
+
+export {
+  action,
+  actions,
+  attribute,
+  setExpressionEvaluator,
+  watcher,
+} from '@engine'
 export { registerHelper } from '@engine/helpers'
 export {
   beginBatch,
