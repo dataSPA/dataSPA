@@ -1,0 +1,16 @@
+{
+  "name": "dataspa-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playwright end-to-end tests for dataSPA",
+  "scripts": {
+    "test": "playwright test",
+    "test:aliased": "BUNDLE=datastar-aliased playwright test",
+    "test:ui": "playwright test --ui",
+    "install:browsers": "playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "typescript": "^5.0.0"
+  }
+}

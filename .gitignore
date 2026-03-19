@@ -8,3 +8,4 @@ library/src/plugins/pro
 node_modules
 
 .zed
+tests/test-results/
